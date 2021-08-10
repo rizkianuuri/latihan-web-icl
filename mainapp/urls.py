@@ -9,4 +9,5 @@ urlpatterns = [
     path('profile/', views.profile),
     path('second/', views.second_page),
     path('', views.landing_page),
+    path('shop', views.shop)
 ]
