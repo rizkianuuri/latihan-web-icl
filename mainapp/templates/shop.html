@@ -1,39 +1,33 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
 
-<head>
-    <title>Judul dari Halaman</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'css/style.png' %}"
-
-</head>
-
-<body>
-    Halo ini adalah isi
-
-    <h1>Header</h1>
-    <h2>Header</h2>
-    <p>paragraph</p>
-    <button>Ada tulisan</button>
-
-    <div style="background-color: red; padding: 10px; margin-top: 20px;">
-        <div style="background-color: aqua; margin: 10px; padding: 10px; text-align: center;">
-            <span>Box</span>
+{% block content %}
+<div class="container mt-4">
+    <div class="card p-4 mb-4">
+        <div class="row align-items-center">
+            <div class="col">
+                <img src="https://id.360buyimg.com/Indonesia/s880x0_/amZzL3QyMi8zMTcvNDA3NTM4MDQwOC8yNjIxNzkvZTE0YzQwZWMvNWY0ODY1YmRONjcxZDNlYjQ.jpg.dpg.webp" width="200">
+            </div>
+            <div class="col-6">
+                <h1>Jepit Rambut Bulu Merak</h1>
+                <span>Tahun 1876</span>
+                <p>Cocok untuk segala jenis rambut</p>
+            </div>
+            <div class="col">
+                <div class="row fs-4 text-center">
+                    <p> Harga </p>
+                </div>
+                <div class="row fs-3 mb-4 text-center">
+                    <span>Rp. 29.000.000</span>
+                </div>
+                <div class="row mb-4">
+                    <a class="btn btn-primary"> Buy Now </a>
+                </div>
+                <div class="row mb-5">
+                    <a class="btn btn-primary"> Add To Cart </a>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="outer-box">
-        <div id="inner-box">
-            <span>Box-2</span>
-        </div>
-    </div>
-
-</body>
-
-</html>
-
-
-<!DOCTYPE html>
-<html>
-
+</div>
+{% endblock content %}
