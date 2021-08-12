@@ -1,3 +1,4 @@
+from .models import *
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -29,3 +30,22 @@ def shop(request):
 
 def home(request):
     return render(request, 'home.html')
+
+def list_produk_decoration(request):
+    try:
+        print(request.GET)
+        category_decoration = Category.objects.get(pk=1)
+        #pk == primary_key
+        if(request.GET=={}):
+            product_decoration = Product.objects.filter(category=category_decoration)
+        else:
+            product_decoration = Product.objects.filter(category=category_decoration).filter(
+                name__icontains=request.GET['product_name'])
+
+        # WHERE name like 'chrome'
+        if(product_decoration.count() != 0):
+            return render(request, 'list_produk_decoration.html', {'product_list': product_decoration, 'available': True})
+        else:
+            return render(request, 'list_produk_decoration.html', {'available': False})
+    except:
+        return HttpResponse("Terjadi Error")
